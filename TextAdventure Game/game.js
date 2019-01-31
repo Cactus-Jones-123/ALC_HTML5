@@ -38,12 +38,35 @@ function Game(){
             if (cactusroomLook == "wake zzz'ing person"){
                 var wakemanUp = alert("You wake up man he reaches under bed and with blank black look, grabs long prickly cactus spine thingy and stabs you throat. Cactus Game Over! D:");
             }
+            
+            else if(cactusroomLook == "back prickly bed"){
+                alert("You sleep in prickly bed dream of man and cactus spine, and death. When you wake see zzz'ing man, remember the dream and stay back");
+            var resume = confirm("Do wish to continue?!");
+            
+            if(resume){
+                BeginCactus();
+            }
+            else{
+                alert("Cactus Game Over! D:");
+            } 
+            }
             else if(cactusroomLook == "move rug"){
-                var rugMove = prompt("You move rug, under is hole barely big for you to fit. \n -go down hole");
+                var rugMove = prompt("You move rug, under is hole barely big for you to fit. \n -go down hole \n -step away");
                 
                 if(rugMove == "go down hole"){
-                    var rugMove = prompt("You crawl out of hole land something gritty pale yellow. You realize this is paradise beach. Congrajulations!!! You Won The Game!!!");
+                    var holeDescend = alert("You crawl out of hole land something gritty pale yellow. You realize this is paradise beach. Congrajulations!!! You Won The Game!!!");
                 }
+                else if(rugMove == "step away"){
+                    BeginCactus();
+                }
+                else{
+                alert("I don'y know you say");
+                BeginCactus();
+            }
+            }
+            else{
+                alert("I don'y know you say!");
+                BeginCactus();
             }
         }
         
@@ -61,18 +84,27 @@ function Game(){
         else if(cactusroom == "search way out"){
             alert("You don't find way out and pricked your fingerses trying to find way out");
             
-            resume = confirm("Do wish to continues?!")
+            resume = confirm("Do wish to continues?!");
             
             if(resume){
                 BeginCactus();
             }
             else{
-                alert("Cactus Game Over! D:")
+                alert("Cactus Game Over! D:");
             }
+        }
+        else if(cactusroom == "look turtle book"){
+            prompt("You open book. There is only uno pagina. It say, 'There is scratch on door. Scratch scratch on locked door tres times to open door.'. \n -scracth door \n -back prickly bed \n -look round again")
+        }
+        else{
+            alert("I don'y know you say");
+            BeginCactus();
         }
     }
     
-    
+    function HallWay(){
+        var hallTodo = prompt("Scratch, scratch, scratch. Door opens. You walk into door and in hallway. There is many doors to left and right. \n -try doors \n -walk down hallway")
+    }
     
     
     
