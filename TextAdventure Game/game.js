@@ -136,6 +136,9 @@ function Game(){
         else if(cactusRoom == "read rule book"){
             var rulebookRead = prompt
         }
+        else if(cactusRoom == "to shop"){
+            Shop();
+        }  
         else{
             alert("I don'y know you say");
             BeginCactus();
@@ -158,7 +161,8 @@ function Game(){
                         alert("You have "+inventory.coins+" coins remaining");
                         Shop();
                     }
-            else if(shopkeeper == "hint" || shopkeeper == "buy hint" && inventory.coins >+150){
+            }
+            else if(shopkeeper == "hint" && inventory.coins >= 150){
                 var hintBuy = confirm("Are you sure you want to buy this hint?");
                     if(hintBuy){
                         inventory.coins = inventory.coins - 150;
@@ -171,7 +175,7 @@ function Game(){
                 alert("Have a good day, come back again!");
                 BeginCactus();
             }
-        }
+        
 }
     
     
