@@ -50,7 +50,6 @@ Multiline comment
 //}
 
 var inventory = {
-    rule_book:1,
     cactus_spine:1,
     coins:1000,
 }
@@ -67,7 +66,7 @@ function Game(){
     BeginCactus();
     
     function BeginCactus(){
-        var cactusRoom = prompt("You wake in cactus bed surrounded by cactus on cactus and more cactus. You are stuck in cactus. Mwahahahahahahahahahahaha! Oh yeah I forgetted tell you head hurts bad by prickly cactus on cactus because of cactus, don't worry bout it there is prickly bed, and no way out you can see. You have a rule book, and a cactus spine on you right now. \n -look roundd \n -back prickly bed \n -search way out \n -look turtle book \n -read rule book \n -go to shop (demonstration for mr. powell)").toLowerCase();
+        var cactusRoom = prompt("You wake in cactus bed surrounded by cactus on cactus and more cactus. You are stuck in cactus. Mwahahahahahahahahahahaha! Oh yeah I forgetted tell you head hurts bad by prickly cactus on cactus because of cactus, don't worry bout it there is prickly bed, and no way out you can see. You have a rule book, and a cactus spine on you right now. \n -look roundd \n -back prickly bed \n -search way out \n -look turtle book \n -to shop").toLowerCase();
         
         if(cactusRoom == "look roundd"){
             var cactusroomLook = prompt("You see turtle run fast in cactus hole. There is pricklies everywhere you look. You find non-prickly bed with person zzz'ing in it. There is prickly door, but locked prickly door. There is prickly bed you woke. In center floor of prickly cactus floor, rug made of cactus and pricklies lay. You also see turtle book on prickly floor. \n -wake zzz'ing person \n -move rug \n -back prickly bed").toLowerCase();
@@ -99,7 +98,7 @@ function Game(){
                 else{
                 alert("I don'y know you say");
                 BeginCactus();
-            }
+                }
             }
             else{
                 alert("I don't know you say!");
@@ -131,7 +130,8 @@ function Game(){
             }
         }
         else if(cactusRoom == "look turtle book"){
-            var turtleBook = prompt("You open book. There is only uno pagina. It say, 'There is scratch on door. Scratch cactus spine on locked door tres times to open door.'. \n -scracth door with cactus spine \n -back prickly bed \n -look round again");
+
+            Turtlebook();
         }
         else if(cactusRoom == "read rule book"){
             var rulebookRead = prompt
@@ -140,13 +140,28 @@ function Game(){
             Shop();
         }  
         else{
-            alert("I don'y know you say");
+            alert("I don'y know you say?!");
             BeginCactus();
         }
     }
     
     function HallWay(){
         var hallTodo = prompt("Scratch, scratch, scratch. Door opens. You walk into door and in hallway. There is many doors to left and right. \n -try doors \n -walk down hallway");
+        if(hallTodo == "try doors"){
+            alert("all doors locked");
+            HallWay();
+        }
+        else if(hallTodo == "walk down hallway"){
+            var hole = prompt("You walk down hallway. There is hole. \n -go down hole \n -back prickly bed");
+            if(hole == "go down hole"){
+                alert("as start going down hole, feel something stab through gut. as fall in hole, you turn and see man standing, he is smiling, he says 'thank you' and than you drift away.");
+                alert("Game over!D:");
+            }
+        }
+        else{
+            alert("I don'y know what say you?!");
+            HallWay();
+        }
     }
    function Shop(){
     alert("The shopkeeper scowls at you and mumble something rude! you wait for him to assist you.");
@@ -167,7 +182,7 @@ function Game(){
                     if(hintBuy){
                         inventory.coins = inventory.coins - 150;
                         alert("You have "+inventory.coins+" coins remaining");
-                        alert("Do not touch the zzz'ing man. he will kill you. if you find a hole, go back to bed and return to hole.");
+                        alert("Do not touch the zzz'ing man. will kill you. if find a hole, go back to bed and return hole.");
                         Shop();
                     }
             }
@@ -176,7 +191,28 @@ function Game(){
                 BeginCactus();
             }
         
-}
+   }
+   function Turtlebook(){
+       var turtleBook = prompt("You open book. There is only uno pagina. It say, 'There is scratch on door. Scratch cactus spine on locked door tres times to open door.'. \n -scratch door \n -back prickly bed \n -look round again");
+       if(turtleBook == "scratch door"){
+           HallWay();
+       }
+       else if(turtleBook == "back prickly bed"){
+           alert("You go to sleep and dream of weird things.");
+           var resume = confirm("Do wish continue?");
+           
+           if(resume){
+               BeginCactus();
+           }
+       }
+       else if(turtleBook == "look round again"){
+           alert("You look around again, nothing change.");
+       }
+       else{
+           alert("I don't know what say?!");
+           Turtlebook();
+       }
+   } 
     
     
 }
