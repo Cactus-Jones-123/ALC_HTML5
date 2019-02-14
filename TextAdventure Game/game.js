@@ -157,6 +157,12 @@ function Game(){
                 alert("as start going down hole, feel something stab through gut. as fall in hole, you turn and see man standing, he is smiling, he says 'thank you' and than you drift away.");
                 alert("Game over!D:");
             }
+            else if(hole == "back prickly bed"){
+                Win();
+            }
+            else{
+                HallWay();
+            }
         }
         else{
             alert("I don'y know what say you?!");
@@ -206,13 +212,36 @@ function Game(){
            }
        }
        else if(turtleBook == "look round again"){
-           alert("You look around again, nothing change.");
+           var resume = confirm("You look around again, nothing change. Do wish continue?");
+           
+           if(resume){
+               Turtlebook();
+           }
        }
        else{
            alert("I don't know what say?!");
            Turtlebook();
        }
-   } 
+   }
+   function Win(){
+       var backBed = prompt("You went bed. When wake, see zzz'ing man gone. \n -back prickly bed again \n -go to hole and jump");
+       
+        if(backBed == "back prickly bed again"){
+            alert("You go bed.");
+            var resume = confirm("Do wish to continue cactus turtle game?");
+            
+            if(resume){
+                Turtlebook();
+            }
+        }
+       else if(backBed == "go to hole and jump"){
+           alert("When go back to hole, man who was zzz'ing there. He turns, say 'thank you' than jump. You follow. You land in paradise. C ongratulations, you won!")
+       }
+       else{
+           alert("I didn't understanding you!");
+           Win();
+       }
+   }
     
     
 }
