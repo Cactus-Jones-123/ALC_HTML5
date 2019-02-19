@@ -48,7 +48,9 @@ Multiline comment
 //                }
 //            }
 //}
-
+ var inventorCheck = function(){
+     alert("\n -cactus spines: "+inventory.cactus_spine+"\n -coins: "+inventory.coins+"");
+ }
 var inventory = {
     cactus_spine:1,
     coins:1000,
@@ -138,7 +140,10 @@ function Game(){
         }
         else if(cactusRoom == "to shop"){
             Shop();
-        }  
+        }
+        else if(cactusRoom == "inventory"){
+            
+        }
         else{
             alert("I don'y know you say?!");
             BeginCactus();
@@ -177,9 +182,8 @@ function Game(){
                 var cactusspineBuy = confirm("Are you sure you want to buy this cactus spine?");
                     if(cactusspineBuy){
                         inventory.cactus_spine ++;
-                        alert("You own " +inventory.cactus_spine+" cactus spines");
                         inventory.coins = inventory.coins - 100;
-                        alert("You have "+inventory.coins+" coins remaining");
+                        inventorCheck();
                         Shop();
                     }
             }
@@ -187,8 +191,8 @@ function Game(){
                 var hintBuy = confirm("Are you sure you want to buy this hint?");
                     if(hintBuy){
                         inventory.coins = inventory.coins - 150;
-                        alert("You have "+inventory.coins+" coins remaining");
                         alert("Do not touch the zzz'ing man. will kill you. if find a hole, go back to bed and return hole.");
+                        inventorCheck();
                         Shop();
                     }
             }
@@ -231,11 +235,11 @@ function Game(){
             var resume = confirm("Do wish to continue cactus turtle game?");
             
             if(resume){
-                Turtlebook();
+                Win();
             }
         }
        else if(backBed == "go to hole and jump"){
-           alert("When go back to hole, man who was zzz'ing there. He turns, say 'thank you' than jump. You follow. You land in paradise. C ongratulations, you won!")
+           alert("When go back to hole, man who was zzz'ing there. He turns, say 'thank you' than jump. You follow. You land in paradise. Congratulations, you won!");
        }
        else{
            alert("I didn't understanding you!");
