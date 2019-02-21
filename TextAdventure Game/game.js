@@ -45,9 +45,34 @@ Multiline comment
 //                else{
 //                    alert("Have a good day, come back again!");
 //                    village();
-//                }
-//            }
-//}
+//                }                                                                            ||
+//            }                                                                                ||
+//}                                                                                          \-||-/
+// This code chooses a random number and depending on the number, there are different outcomes\||/
+//    function Random(){                                                                       \/
+//        alert("all doors locked but one are locked you open door.");
+//        var rand = [Math.floor(Math.random()* 3)];
+        
+//        if(rand == 0){
+//            restart();
+//        }
+//        else if(rand == 1){
+//            win();
+//        }
+//        else if(rand == 2){
+//            lose();
+//        }
+//    }
+//    function restart(){
+//        alert("When open door, cactus swing down, you try dodge, but it still hit you. It losted some of speed/momentum though. Cactus had smacks you face. You is nocked out.");
+//        BeginCactus();
+//    }
+//    function win(){
+//        alert("When open door, you see cactus swinging down, you dodge, but barely. You look around and see a hole, you jump down. You land in paradise, Congradulations!! You won!");
+//    }
+//    function lose(){
+//        alert("When open door, cactus swings down, kills you with hit to face. Ooooh, you lose. D:");
+//    }
  var inventorCheck = function(){
      alert("\n -cactus spines: "+inventory.cactus_spine+"\n -coins: "+inventory.coins+"");
  }
@@ -144,6 +169,9 @@ function Game(){
         else if(cactusRoom == "inventory"){
             
         }
+        else if(cactusRoom == "try"){
+            Random();
+        }
         else{
             alert("I don'y know you say?!");
             BeginCactus();
@@ -153,8 +181,7 @@ function Game(){
     function HallWay(){
         var hallTodo = prompt("Scratch, scratch, scratch. Door opens. You walk into door and in hallway. There is many doors to left and right. \n -try doors \n -walk down hallway");
         if(hallTodo == "try doors"){
-            alert("all doors locked");
-            HallWay();
+            Random();
         }
         else if(hallTodo == "walk down hallway"){
             var hole = prompt("You walk down hallway. There is hole. \n -go down hole \n -back prickly bed");
@@ -174,7 +201,7 @@ function Game(){
             HallWay();
         }
     }
-   function Shop(){
+    function Shop(){
     alert("The shopkeeper scowls at you and mumble something rude! you wait for him to assist you.");
     
         var shopkeeper = prompt("What do ou want to buy? \n -cactus spine \n -hint \n -leave shop");
@@ -201,34 +228,34 @@ function Game(){
                 BeginCactus();
             }
         
-   }
-   function Turtlebook(){
-       var turtleBook = prompt("You open book. There is only uno pagina. It say, 'There is scratch on door. Scratch cactus spine on locked door tres times to open door.'. \n -scratch door \n -back prickly bed \n -look round again");
-       if(turtleBook == "scratch door"){
-           HallWay();
-       }
-       else if(turtleBook == "back prickly bed"){
-           alert("You go to sleep and dream of weird things.");
-           var resume = confirm("Do wish continue?");
+    }
+    function Turtlebook(){
+        var turtleBook = prompt("You open book. There is only uno pagina. It say, 'There is scratch on door. Scratch cactus spine on locked door tres times to open door.'. \n -scratch door \n -back prickly bed \n -look round again");
+        if(turtleBook == "scratch door"){
+            HallWay();
+        }
+        else if(turtleBook == "back prickly bed"){
+            alert("You go to sleep and dream of weird things.");
+            var resume = confirm("Do wish continue?");
            
-           if(resume){
-               BeginCactus();
-           }
-       }
-       else if(turtleBook == "look round again"){
-           var resume = confirm("You look around again, nothing change. Do wish continue?");
+            if(resume){
+                BeginCactus();
+            }
+        }
+        else if(turtleBook == "look round again"){
+            var resume = confirm("You look around again, nothing change. Do wish continue?");
            
-           if(resume){
-               Turtlebook();
-           }
+            if(resume){
+                Turtlebook();
+            }
+        }
+        else{
+            alert("I don't know what say?!");
+            Turtlebook();
        }
-       else{
-           alert("I don't know what say?!");
-           Turtlebook();
-       }
-   }
-   function Win(){
-       var backBed = prompt("You went bed. When wake, see zzz'ing man gone. \n -back prickly bed again \n -go to hole and jump");
+    }
+    function Win(){
+        var backBed = prompt("You went bed. When wake, see zzz'ing man gone. \n -back prickly bed again \n -go to hole and jump");
        
         if(backBed == "back prickly bed again"){
             alert("You go bed.");
@@ -245,7 +272,30 @@ function Game(){
            alert("I didn't understanding you!");
            Win();
        }
-   }
+    }
     
-    
+    function Random(){
+        alert("all doors locked but one are locked you open door.");
+        var rand = [Math.floor(Math.random()* 3)];
+        
+        if(rand == 0){
+            restart();
+        }
+        else if(rand == 1){
+            win();
+        }
+        else if(rand == 2){
+            lose();
+        }
+    }
+    function restart(){
+        alert("When open door, cactus swing down, you try dodge, but it still hit you. It losted some of speed/momentum though. Cactus had smacks you face. You is nocked out.");
+        BeginCactus();
+    }
+    function win(){
+        alert("When open door, you see cactus swinging down, you dodge, but barely. You look around and see a hole, you jump down. You land in paradise, Congradulations!! You won!");
+    }
+    function lose(){
+        alert("When open door, cactus swings down, kills you with hit to face. Ooooh, you lose. D:");
+    }
 }
