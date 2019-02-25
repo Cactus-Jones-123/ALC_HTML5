@@ -7,17 +7,21 @@ Multiline comment
 
 //document.write("<h1>Hey! <em>Same!</em></h1>");
 
-
+// This code pops up and tells them something
 //alert("What are you doing user! Answer these questions to get in and you will find what I say about you!! Mwahahahahaha");
 
 //confirm("Do you like pokemon?");
 
+// This code asks what type of pokemon they like
 //prompt("What type of pokemon do you like?");
 
+// This code asks their name
 //var pc = prompt("What you be called?");
 
+// This makes sure that thats what they want
 //confirm("So you be that one "+pc);
 
+// This code is a new function, wich can be accessed anytime
 //function Swamp(){
 //    var swampEnv = prompt("this is a dank swamp. \n -follow path \n -swim");
     
@@ -29,6 +33,7 @@ Multiline comment
 //    }
 //}
 
+// This code is a shop and you can buy and store things in your inventory
 //function Blacksmith(){
 //    alert("The blacksmith scowls at you and mumble something rude! you wait fo rhim to assist you.");
     
@@ -73,7 +78,26 @@ Multiline comment
 //    function lose(){
 //        alert("When open door, cactus swings down, kills you with hit to face. Ooooh, you lose. D:");
 //    }
- var inventorCheck = function(){
+
+// This code makes a while loop to make sure its raining
+//var isRaining = true;
+
+//while(isRaining){
+//    console.log("It is raining outside, take an umbrella!");
+//    isRaining = false;
+//}
+
+// This code makes a for loop so you can do multiple things at once
+//for(i = 1; i <= arrowCon; i++){
+//    inventory.arrows ++;
+//    console.log("You have "+inventory.arrows+" arrows");
+//    inventory.coins --;
+//    console.log("You have "+inentory.coins+" coins");
+//    arrowsShop --;
+//}
+//alert("you have "+inventory.coins+" coins in your purse");
+//alert("You have purchased "+arrowCon+" arrows. Thank you!")
+ var inventoryCheck = function(){
      alert("\n -cactus spines: "+inventory.cactus_spine+"\n -coins: "+inventory.coins+"");
  }
 var inventory = {
@@ -87,6 +111,10 @@ function Game(){
     document.write("<h1>Bruh you want to <em>restart</em>, restart the <em>page</em> to play game again!!!</h1>")
     alert("The Cactus Turtle Story Thingamagigger");
     var playerName = prompt("What you be called?!");
+    
+    while(!confirm("Are you sure "+playerName+" is you name?")){
+        playerName = prompt("What you be called then?!")
+    }
     alert("Make sure to spell out your answer exactly as you see the ways or it won't work. Thanks for playing!!")
     alert("Welcome to story of turtle who be cactus,  "+ playerName);
     
@@ -169,9 +197,6 @@ function Game(){
         else if(cactusRoom == "inventory"){
             
         }
-        else if(cactusRoom == "try"){
-            Random();
-        }
         else{
             alert("I don'y know you say?!");
             BeginCactus();
@@ -205,21 +230,29 @@ function Game(){
     alert("The shopkeeper scowls at you and mumble something rude! you wait for him to assist you.");
     
         var shopkeeper = prompt("What do ou want to buy? \n -cactus spine \n -hint \n -leave shop");
-            if(shopkeeper == "cactus spine" || shopkeeper == "buy cactus spine" && inventory.coins >= 100){
-                var cactusspineBuy = confirm("Are you sure you want to buy this cactus spine?");
-                    if(cactusspineBuy){
-                        inventory.cactus_spine ++;
-                        inventory.coins = inventory.coins - 100;
-                        inventorCheck();
-                        Shop();
-                    }
+            if(shopkeeper == "cactus spine" || shopkeeper == "buy cactus spine"){
+                var cactusspineBuy = prompt("How many cactus spines would you like to buy?");
+                
+                while(!confirm("Are you sure you want to buy "+cactusspineBuy+" cactus spines, for 100 coins per spine?")){
+                    cactusspineBuy = prompt("How many cactus spines do you want to buy then?!");
+                }
+                
+                for(i = 1; i<= cactusspineBuy; i++){
+                    inventory.cactus_spine ++;
+                    console.log("You have "+inventory.cactus_spine+" cactus spines");
+                    inventory.coins -= 100;
+                    console.log("You have "+inventory.coins+" coins");
+                    inventoryCheck();
+                    Shop();
+                }
             }
+            
             else if(shopkeeper == "hint" && inventory.coins >= 150){
                 var hintBuy = confirm("Are you sure you want to buy this hint?");
                     if(hintBuy){
                         inventory.coins = inventory.coins - 150;
                         alert("Do not touch the zzz'ing man. will kill you. if find a hole, go back to bed and return hole.");
-                        inventorCheck();
+                        inventoryCheck();
                         Shop();
                     }
             }
@@ -289,7 +322,7 @@ function Game(){
         }
     }
     function restart(){
-        alert("When open door, cactus swing down, you try dodge, but it still hit you. It losted some of speed/momentum though. Cactus had smacks you face. You is nocked out.");
+        alert("When open door, cactus swing down, you try dodge, but it still hit you. It losted some of speed/momentum though. Cactus had smacks you face. You is nocked out. You restart.");
         BeginCactus();
     }
     function win(){
