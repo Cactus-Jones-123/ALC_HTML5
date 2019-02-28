@@ -101,7 +101,7 @@ Multiline comment
      alert("\n -cactus spines: "+inventory.cactus_spine+"\n -coins: "+inventory.coins+"");
  }
 var inventory = {
-    cactus_spine:1,
+    cactus_spine:0,
     coins:1000,
 }
 Game();
@@ -227,24 +227,27 @@ function Game(){
         }
     }
     function Shop(){
+        var i = 1;
     alert("The shopkeeper scowls at you and mumble something rude! you wait for him to assist you.");
     
         var shopkeeper = prompt("What do ou want to buy? \n -cactus spine \n -hint \n -leave shop");
             if(shopkeeper == "cactus spine" || shopkeeper == "buy cactus spine"){
-                var cactusspineBuy = prompt("How many cactus spines would you like to buy?");
+                var spineBuy = prompt("How many cactus spines would you like to buy?");
                 
-                while(!confirm("Are you sure you want to buy "+cactusspineBuy+" cactus spines, for 100 coins per spine?")){
-                    cactusspineBuy = prompt("How many cactus spines do you want to buy then?!");
+                while(!confirm("Are you sure you want to buy "+spineBuy+" cactus spines, for 100 coins per spine?")){
+                    spineBuy = prompt("How many cactus spines do you want to buy then?!");
                 }
                 
-                for(i = 1; i<= cactusspineBuy; i++){
+                for(; i<= spineBuy; i++){
                     inventory.cactus_spine ++;
                     console.log("You have "+inventory.cactus_spine+" cactus spines");
                     inventory.coins -= 100;
                     console.log("You have "+inventory.coins+" coins");
-                    inventoryCheck();
-                    Shop();
                 }
+                
+                
+                inventoryCheck();
+                Shop();
             }
             
             else if(shopkeeper == "hint" && inventory.coins >= 150){
