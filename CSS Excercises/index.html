@@ -5,7 +5,7 @@
         
         <style type="text/css">
             body{
-                background-color:darkblue;
+                background-color:white;
                 margin:0;
             }
             h1{
@@ -34,20 +34,79 @@
                 width:100px;
                 height:100px;
                 position: absolute;
-                left: 600px;
-                top: 600px;
+                left: 150px;
+                top: 350px;
                 
             }
             div#circle{
                 background-color:darkgreen;
-                width:100px;
-                height:100px;
+                width:130px;
+                height:130px;
                 border-radius: 100%;
                 position: absolute;
-                left: 800px;
-                top: 500px;
+                left: 280px;
+                top: 480px;
                 
             }
+            div#triangle{
+                width: 0;
+                height: 0;
+                border-right: 66px solid transparent;
+                border-left: 66px solid transparent;
+                border-bottom: 100px solid #000;
+                position: absolute;
+                left: 280px;
+                top: 350px;
+            }
+            div#rectangle{
+                background-color: darkblue;
+                width: 100px;
+                height: 120px;
+                position: absolute;
+                left: 150px;
+                top: 480px;
+                
+                
+            }
+            .blue {
+                background-color: blue;
+            }
+            .sphere {
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+                text-align: center;
+                vertical-align: middle;
+                font-size: 500%;
+                position: absolute;
+                box-shadow: inset -10px -10px 100px #000, 10px 10px 20px black, inset 0px 0px 10px black;
+                display: inline-block;
+                margin: 5%;
+            }
+            .sphere::after {
+                background-color: rgba(255, 255, 255, 0.3);
+                content: '';
+                height: 45%;
+                width: 12%;
+                position: absolute;
+                top: 4%;
+                left: 15%;
+                border-radius: 50%;
+                transform: rotate(40deg);
+            }
+            img#blueguys{
+                display:block;
+                width:300px;
+                height:300px;
+                position: absolute;
+                top: 700px;
+                left: 100px;
+                border:outset 5px red;
+                border-radius: 100%;
+                box-shadow: 10px 10px 30px black;
+                
+            }
+            
         </style>
     </head>
     <body>
@@ -56,5 +115,9 @@
         <h4>Man this is fun</h4>
         <div id="box"></div>
         <div id="circle"></div>
+        <div id="triangle"></div>
+        <div id="rectangle"></div>
+        <div class="sphere blue"></div>
+        <img src="Blue_guys.jpg" id="blueguys">
     </body>
 </html>
