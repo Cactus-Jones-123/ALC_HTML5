@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        
+        <canvas id="myCanvas" width="400" height="400" style="border:10px dotted darkblue;background-color: aqua"></canvas>
+        <script>
+            //setup canvas
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            //draws rectangle
+            ctx.fillStyle = "lightblue";
+            ctx.fillRect(0,0, 400,400);
+            //draws line
+            ctx.moveTo(0,0);
+            ctx.lineTo(400, 400);
+            ctx.stroke();
+            
+            ctx.moveTo(0,400);
+            ctx.lineTo(400,0);
+            ctx.stroke();
+            //draws circle
+            ctx.beginPath();
+            ctx.arc(200, 200, 200, 0, 2 * Math.PI);
+            ctx.stroke();
+            //create gradient
+            var grd = ctx.createLinearGradient(0, 0, 275, 0);
+            grd.addColorStop(0.5, "darkblue");
+            grd.addColorStop(1, "darkred");
+            
+            //fill with gradien
+            ctx.fillStyle = grd;
+            ctx.fillRect(100, 100, 200, 200);
+        </script>
+        
+    </body>
+</html>
