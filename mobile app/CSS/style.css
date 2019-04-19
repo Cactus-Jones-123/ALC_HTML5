@@ -1,3 +1,10 @@
+/* Google Fonts
+
+font-family: 'Dokdo', cursive;
+font-family: 'Indie Flower', cursive;
+font-family: 'Anton', sans-serif;
+
+*/
 /* Stylesheet for Mobile App */
 /* Reset */
 html,body,div,p,ul,ol,li,h1,h2,h3,h4,h5,h6
@@ -7,35 +14,50 @@ html,body,div,p,ul,ol,li,h1,h2,h3,h4,h5,h6
 }
 body{
     background-color:forestgreen;
-    
 }
 div#container{
     width:500px;
     height:500px;
-    border:3px dashed orange;
-    background-image: url(https://www.dailydot.com/wp-content/uploads/f10/f1/686bf45f96ce06af9dd5324453868273.jpg);
+    border:3px dotted orange;
+    background-color: #04006c;
+
 }
 header{
-    width:29%;
-    padding:20px;
-    background-color:cadetblue;
+    padding:40px;
+    background-color:orange;
 }
 header h1{
-    color:aquamarine;
-    font-family:"Tahoma",sans-serif;
+    color:#04006c;
+    font-family: 'Dokdo', cursive;
 }
 div#content{
-    width:22.5%;
     background-color:cornsilk;
-    color:darkcyan;
+    color:#04006c;
+    font-family: 'Indie Flower', cursive;
 }
 nav{
-    width:26.5%;
-    background-color:coral;
-    color:darkcyan;
+    background-color:white;
+    font-family: 'Anton', sans-serif;
+}
+nav ul{
+    list-style: none;
+}
+nav ul li{
+    float:left;
+    padding:5px 15px;
+    border-right:1px dashed #04006c;
+}
+nav ul li a{
+    color:#04006c;
+}
+nav ul li a:hover{
+    background-color:#04006c;
+    color:#a5fc5a;
 }
 footer{
-    width:20%;
     height:50px;
     background-color:darkolivegreen;
+}
+div.keepOpen{
+    clear:both;
 }
