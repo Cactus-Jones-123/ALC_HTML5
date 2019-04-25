@@ -1,9 +1,7 @@
 /* Google Fonts
-
 font-family: 'Dokdo', cursive;
 font-family: 'Indie Flower', cursive;
 font-family: 'Anton', sans-serif;
-
 */
 /* Stylesheet for Mobile App */
 /* Reset */
@@ -16,8 +14,7 @@ body{
     background-color:forestgreen;
 }
 div#container{
-    width:500px;
-    height:500px;
+    width:100%;
     border:3px dotted orange;
     background-color: #04006c;
 
@@ -42,22 +39,36 @@ nav{
 nav ul{
     list-style: none;
 }
-nav ul li{
+nav ul li a{
     float:left;
     padding:5px 15px;
     border-right:1px dashed #04006c;
-}
-nav ul li a{
     color:#04006c;
+    text-decoration:none;
 }
 nav ul li a:hover{
     background-color:#04006c;
     color:#a5fc5a;
 }
 footer{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
     height:50px;
-    background-color:darkolivegreen;
+    background-color:#1f0294;
 }
 div.keepOpen{
     clear:both;
+}
+
+@media screen and (max-width: 600px) {
+    div#container{
+        width:100%;
+    }
+    
+    nav ul li a{
+        float:none;
+        text-align:center;
+    }
 }
