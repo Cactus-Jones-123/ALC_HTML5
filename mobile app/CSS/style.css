@@ -32,6 +32,7 @@ div#content{
     color:#04006c;
     font-family: 'Indie Flower', cursive;
 }
+/*
 nav{
     background-color:white;
     font-family: 'Anton', sans-serif;
@@ -50,6 +51,31 @@ nav ul li a:hover{
     background-color:#04006c;
     color:#a5fc5a;
 }
+*/
+.icon-bar {
+    position:absolute;
+    bottom:0;
+    left:0;
+    width: 100%;
+    background-color: white;
+    overflow:auto;
+}
+.icon-bar a{
+    float:left;
+    width:20%;
+    text-align:center;
+    padding:12px 0;
+    transition:all 0.3s ease;
+    color:#04006c;
+    font-size:36px;
+}
+.icon-bar a:hover {
+    background-color:#a80802;
+}
+.active{
+    background-color:#17ab03;
+}
+/*
 footer{
     position:absolute;
     bottom:0;
@@ -66,9 +92,8 @@ div.keepOpen{
     div#container{
         width:100%;
     }
-    
     nav ul li a{
         float:none;
         text-align:center;
     }
-}
+}*/
