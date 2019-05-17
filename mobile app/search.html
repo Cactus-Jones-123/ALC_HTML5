@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mobile App Name</title>
+        <title>Turtles At Home!!!</title>
         <link type="text/css" rel="stylesheet" href="CSS/style.css">
         <link href="https://fonts.googleapis.com/css?family=Anton|Dokdo|Indie+Flower" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,7 +16,8 @@
                 <h1>Turtles At Home!!!</h1>
             </header>
             <div id="content">
-                <h3>Search Turtle Things</h3>
+                <h3>Search Things</h3>
+                <input type="text" id="filterInput" placeholder="Search Turtle Stuff...">
                 <figure class="cactus">
                         <img src="img/turtlememe.jpg" alt="Product#1">
                         <figcaption>$10</figcaption>
@@ -44,5 +45,29 @@
             </footer>
 -->
         </div>
+        <script>
+        //Get input element
+        let filterInput = document.getElementById('filterInput');
+        //Add event listener
+        filterInput.addEventListener('keyup', filterNames);
+        function filterNames(){
+          // Get value of input
+          let filterValue = document.getElementById('filterInput').value.toUpperCase();
+          // Get names ul
+          let ul = document.getElementById('names');
+          // Get lis from ul
+          let li = ul.querySelectorAll('li.collection-item');
+          // Loop through collection-item lis
+          for(let i = 0;i < li.length;i++){
+            let a = li[i].getElementsByTagName('a')[0];
+            // If matched
+            if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1){
+              li[i].style.display = '';
+            } else {
+              li[i].style.display = 'none';
+            }
+          }
+        }
+        </script>
     </body>
 </html>
